@@ -33,6 +33,12 @@
                         :style = "{backgroundColor: variant.color}"
                         class="color-circle"
                     ></div>
+                    <button 
+                        class="button" 
+                        :class="{ disabledButton: inventory <= 0 }"
+                        :disabled="inventory <= 0"
+                        v-on:click="addToCart"
+                    >Add to Cart</button>
                 </div>
             </div>
         </div>
