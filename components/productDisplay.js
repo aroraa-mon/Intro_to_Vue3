@@ -66,7 +66,7 @@ app.component('product-display', {
     }, 
     methods: {
         addToCart() {
-            this.$emit('add-to-cart');
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].id);
         },
         changeVariant(index) {
             this.selectedVariant = index;
