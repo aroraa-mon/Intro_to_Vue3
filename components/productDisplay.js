@@ -36,7 +36,10 @@ app.component('product-display', {
                 >Add to Cart</button>
             </div>
         </div>
-    </div>`,
+        <review-list :reviews="reviews"></review-list>
+        <review-form @review-submitted="addReview"></review-form>
+    </div>
+    `,
     data() {
         return {
             product: 'Socks',
@@ -47,6 +50,7 @@ app.component('product-display', {
             ],
             brand: 'Vue Mastery',
             selectedVariant: 0,
+            reviews: [],
         };
     },
     computed: {
@@ -70,6 +74,9 @@ app.component('product-display', {
         },
         changeVariant(index) {
             this.selectedVariant = index;
+        },
+        addReview(review) {
+            this.reviews.push(review);
         }
     }
 })
