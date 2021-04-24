@@ -15,6 +15,10 @@ const app = Vue.createApp({
     methods: {
         addToCart() {
             this.cart += 1;
+        },
+        changeImage(color) {
+            if (color == 'green') this.image = './assets/images/socks_green.jpg';
+            else this.image = './assets/images/socks_blue.jpg'
         }
     }
 });
